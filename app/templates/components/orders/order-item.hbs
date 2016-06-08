@@ -1,0 +1,27 @@
+{{#md-card title=product.name
+    titleClass="orange-text"
+    image=product.imageUrl class=computedClasses}}
+
+    {{#if orderItem.quantity}}
+      <span class="counter">
+      {{orderItem.quantity}}
+      </span>
+    {{/if}}
+
+    {{#md-card-content class='p-10'}}
+      {{product.description}}
+    {{/md-card-content}}
+
+    {{#md-card-action class="p-5"}}
+      {{md-btn icon='fa fa-plus'
+        action='add' buttonType='floating'
+        class='btn-large blue'}}
+
+      {{#if orderItem.quantity}}
+        {{md-btn
+          icon='fa fa-times'
+          action='delete' buttonType='floating'
+          class='btn-large pull-right red'}}
+      {{/if}}
+    {{/md-card-action}}
+{{/md-card}}

@@ -1,0 +1,22 @@
+.order-item {
+  .card-image {
+    img {
+      height: 200px;
+    }
+  }
+}
+
+.order-item-selected {
+  border: solid #4CAF50  3px;
+
+  .counter{
+    background-color: #4CAF50 !important;
+    color: #fff;
+    position: absolute;
+    font-size: 23px;
+    right: -18px;
+    top: -25px;
+    padding: 5px 15px;
+    border-radius: 50%;
+  }
+}

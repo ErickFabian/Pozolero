@@ -1,0 +1,34 @@
+<div class="page-title">
+  <h4>Clients</h4>
+  <span class="pull-right">
+    {{#link-to 'dashboard.clients.new'}}
+      Add new Client
+    {{/link-to}}
+  </span>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Phone Number</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each clients as |client|}}
+      <tr>
+        <th>{{client.id}}</th>
+        <th>{{client.firstName}}</th>
+        <th>{{client.lastName}}</th>
+        <th>{{client.phoneNumber}}</th>
+        <th>{{client.address}}</th>
+      </tr>
+    {{/each}}
+  </tbody>
+  <tfoot>
+
+  </tfoot>
+</table>

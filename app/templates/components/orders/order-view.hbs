@@ -1,0 +1,111 @@
+{{#md-card title=order.id
+  activator=true}}
+
+  {{#md-card-content}}
+    <div>
+      {{md-badge class='orange white-text p-5' text=order.type}}
+    </div>
+
+    <br>
+
+    <div class="right-align">
+      <h6>
+        <strong>
+          Fecha:
+        </strong>
+        <small>
+          {{moment-from-now order.createdAt interval=1000}}
+        </small>
+      </h6>
+    </div>
+
+    <h6>
+      <strong>
+        Cliente:
+      </strong>
+      <small>
+        {{order.client.fullName}}
+      </small>
+    </h6>
+    <h6>
+      <strong>
+        Direccion:
+      </strong>
+      <small>
+        {{order.client.address}}
+      </small>
+    </h6>
+    <h6>
+      <strong>
+        Telefono:
+      </strong>
+      <small>
+        {{order.client.phoneNumber}}
+      </small>
+    </h6>
+
+    <hr>
+
+    <h6>
+      {{order.note}}
+    </h6>
+
+    <hr>
+
+    <h5>
+      Total:
+      <small>
+        {{orderTotal}}
+      </small>
+    </h5>
+  {{/md-card-content}}
+
+  {{#md-card-action class="p-5"}}
+    {{md-btn icon='fa fa-edit'
+      action='edit' buttonType='floating'
+      class='btn-large blue'}}
+  {{/md-card-action}}
+
+  {{#md-card-reveal}}
+    <table>
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Costo Unitario</th>
+          <th>Costo Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each orderItems as |orderItem|}}
+          <tr>
+            <td>
+              {{orderItem.product.name}}
+            </td>
+            <td>
+              {{orderItem.quantity}}
+            </td>
+            <td>
+              {{orderItem.product.cost}}
+            </td>
+            <td>
+              {{orderItem.cost}}
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">
+            <h5>
+              Total:
+            </h5>
+          </td>
+          <td>
+            {{orderTotal}}
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  {{/md-card-reveal}}
+{{/md-card}}

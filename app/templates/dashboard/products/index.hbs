@@ -1,0 +1,18 @@
+<div class="page-title">
+  <h4>
+    Products
+    <small class="pull-right">
+      {{#link-to 'dashboard.products.new' classNames='indigo darken-2 waves-light waves-effect btn'}}
+        Add new Product
+      {{/link-to}}
+    </small>
+  </h4>
+</div>
+
+<div class="row">
+  {{#each products as |product|}}
+    <div class="col l4 m6 s12">
+      {{products/product-item product=product}}
+    </div>
+  {{/each}}
+</div>

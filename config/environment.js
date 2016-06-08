@@ -16,6 +16,14 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    API: {
+      // Here you add api settings.
+    },
+
+    sassOptions: {
+      includePaths: ['bower_components/materialize/sass']
     }
   };
 
@@ -25,6 +33,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.API.host = 'http://localhost:3000';
   }
 
   if (environment === 'test') {
@@ -41,6 +50,13 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
+  }
+
+  // Configure ember simple auth options.
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'auth.sign-in',
+    routeAfterAuthentication: 'dashboard',
+    routeIfAlreadyAuthenticated: 'dashboard'
   }
 
   return ENV;

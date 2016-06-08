@@ -1,0 +1,12 @@
+{{#md-card title=product.name
+    titleClass="orange-text"
+    image=product.imageUrl classNames='product-item'}}
+    {{#md-card-content}}
+      {{product.description}}
+    {{/md-card-content}}
+
+    {{#md-card-action}}
+      {{#link-to 'dashboard.products.edit'}}Edit{{/link-to}}
+      <a href='#' {{action "delete" product}}>Delete</a>
+    {{/md-card-action}}
+{{/md-card}}

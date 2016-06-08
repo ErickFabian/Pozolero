@@ -15,3 +15,8 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
+.nvmrc
+.DS_Store
+
+# Settings
+/config/deploy.js

@@ -1,0 +1,11 @@
+<h1>Add Client</h1>
+
+<form class="text-center" {{action 'create' on='submit'}}>
+  <div class="row">
+    {{md-input value=client.firstName label='First Name' class="col s12" type="text"}}
+    {{md-input value=client.lastName label='Last Name' class="col s12" type="text"}}
+    {{md-input value=client.address label='Address' class="col s12" type="text"}}
+    {{md-input value=client.phoneNumber label='Phone Number' class="col s12" type="text"}}
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>

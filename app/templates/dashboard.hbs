@@ -1,0 +1,28 @@
+{{#md-navbar name='Pozolero' class='green'}}
+  {{#if session.isAuthenticated}}
+    <a {{action 'invalidateSession'}}>Logout</a>
+  {{/if}}
+{{/md-navbar}}
+<div class="row">
+  {{#md-fixed-btns
+    class="fixed-action-btn"
+    btnIcon="fa fa-plus"
+    btnClass="btn-large blue darken-2"
+    action="createOrder"
+    actionArgs="0"}}
+
+    {{md-fixed-btn
+      btnClass="indigo"
+      btnIcon="fa fa-users"
+      action="viewClients"
+      actionArgs="1"}}
+
+    {{md-fixed-btn
+      btnClass="deep-orange"
+      btnIcon="fa fa-cutlery"
+      action="viewProducts"}}
+  {{/md-fixed-btns}}
+</div>
+<div class="container">
+  {{outlet}}
+</div>

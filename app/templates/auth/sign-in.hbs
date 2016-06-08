@@ -1,0 +1,9 @@
+<h1>Sign in</h1>
+
+<form class="text-center" {{action 'authAction' on='submit'}}>
+  <div class="row">
+    {{md-input value=identification label='Email' class="col s12" validate=true type="email"}}
+    {{md-input value=password label='Password' class="col s12" validate=true type="password"}}
+  </div>
+  <button type="submit" class="btn btn-primary">Ingresar</button>
+</form>
