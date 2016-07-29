@@ -1,11 +1,20 @@
 import Ember from 'ember';
+import DirtyRecordDeleter from 'pozolero/mixins/dirty_record_deleter';
 
-export default Ember.Route.extend({
+const { Route, RSVP } = Ember;
+
+export default Route.extend(DirtyRecordDeleter, {
   model() {
-    return Ember.RSVP.hash({
-      order: this.store.createRecord('order'),
-      clients: this.store.findAll('client'),
+    return RSVP.hash({
+      order:    this.store.createRecord('order'),
+      clients:  this.store.findAll('client'),
       products: this.store.findAll('product')
     });
+  },
+
+  actions: {
+     willTransition(transition) {
+        this.clearDirtyRecords('order');
+     }
   }
 });
