@@ -1,8 +1,8 @@
-<div class="page-title">
-  <h4>
+<div class="page-title mb-15">
+  <h4 class="mb-5">
     Products
     <small class="pull-right">
-      {{#link-to 'dashboard.products.new' classNames='indigo darken-2 waves-light waves-effect btn'}}
+      {{#link-to 'dashboard.products.new'}}
         Add new Product
       {{/link-to}}
     </small>
@@ -11,7 +11,7 @@
 
 <div class="row">
   {{#each products as |product|}}
-    <div class="col l4 m6 s12">
+    <div class="col l3 m4 s6">
       {{products/product-item product=product}}
     </div>
   {{/each}}

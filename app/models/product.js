@@ -1,13 +1,10 @@
-import Ember from 'ember';
 import DS from 'ember-data';
-import { validator, buildValidations } from 'ember-cp-validations';
 
 const {
   Model,
   attr,
 } = DS;
 
-const { computed } = Ember;
 const defaultImageUrl = '/assets/images/default-product-image.jpg';
 
 export default Model.extend({

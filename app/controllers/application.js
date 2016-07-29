@@ -11,7 +11,6 @@ const {
 
 export default Controller.extend({
   session: service(),
-  notify: service(),
 
   actions: {
     invalidateSession() {

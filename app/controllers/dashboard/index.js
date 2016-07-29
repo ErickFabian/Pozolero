@@ -11,6 +11,10 @@ export default Controller.extend({
   actions: {
     editOrder(order) {
       this.transitionToRoute('dashboard.orders.edit', order);
+    },
+
+    deleteOrder(order) {
+      order.destroyRecord();
     }
   }
 });

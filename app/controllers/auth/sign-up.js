@@ -71,9 +71,7 @@ export default Controller.extend({
   },
 
   authActionSucceeded() {
-    let message = 'message';
     this.transitionToRoute('auth.sign-in').promise.then(() => {
-      console.log('success');
     });
   },
 

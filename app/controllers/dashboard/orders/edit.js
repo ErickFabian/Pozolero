@@ -8,15 +8,14 @@ const {
 
 const {
   mapBy,
-  alias,
   sum
 } = computed;
 
 export default Controller.extend(Saveable, {
-  order:          alias('model.order'),
-  clients:        alias('model.clients'),
-  products:       alias('model.products'),
-  orderItems:     alias('order.orderItems'),
+  order: computed.alias('model.order'),
+  clients: computed.alias('model.clients'),
+  products: computed.alias('model.products'),
+  orderItems: computed.alias('order.orderItems'),
   orderItemsCost: mapBy('orderItems', 'cost'),
   orderTotal:     sum('orderItemsCost'),
 

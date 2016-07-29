@@ -12,7 +12,7 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
 
   actions: {
     authenticationFailed(response) {
-      console.log('auth fail');
+      console.log(response, 'auth fail');
     }
   }
 });

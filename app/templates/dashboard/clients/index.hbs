@@ -1,34 +1,33 @@
-<div class="page-title">
-  <h4>Clients</h4>
-  <span class="pull-right">
-    {{#link-to 'dashboard.clients.new'}}
-      Add new Client
-    {{/link-to}}
-  </span>
+<div class="page-title mb-15">
+  <h4 class="mb-5">
+    Clients
+    <span class="pull-right">
+      {{#link-to 'dashboard.clients.new'}}
+        Add new Client
+      {{/link-to}}
+    </span>
+  </h4>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Phone Number</th>
-      <th>Address</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each clients as |client|}}
-      <tr>
-        <th>{{client.id}}</th>
-        <th>{{client.firstName}}</th>
-        <th>{{client.lastName}}</th>
-        <th>{{client.phoneNumber}}</th>
-        <th>{{client.address}}</th>
-      </tr>
-    {{/each}}
-  </tbody>
-  <tfoot>
+<div class="row">
+  <div class="col s12">
+    {{#md-table content=clients class='bordered striped' as |client|}}
+      {{md-table-col row=client valueBindingPath='id'}}
+      {{md-table-col row=client valueBindingPath='firstName'}}
+      {{md-table-col row=client valueBindingPath='lastName'}}
+      {{md-table-col row=client valueBindingPath='phoneNumber'}}
+      {{md-table-col row=client valueBindingPath='address'}}
+      {{#md-table-col row=client key='name' header='Actions'}}
+        {{md-btn icon='fa fa-edit'
+          action='edit' actionArg=client buttonType='floating'
+          class='btn-large blue'
+        }}
 
-  </tfoot>
-</table>
+        {{md-btn icon='fa fa-times'
+          action='delete' actionArg=client buttonType='floating'
+          class='btn-large red pull-right'
+        }}
+      {{/md-table-col}}
+    {{/md-table}}
+  </div>
+</div>

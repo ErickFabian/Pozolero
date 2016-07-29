@@ -8,6 +8,7 @@ const {
 export default Component.extend({
   addAction: 'addOrderItem',
   deleteAction: 'deleteOrderItem',
+  orderItems: computed.alias('order.orderItems'),
 
   computedClasses: computed('orderItem.quantity', function() {
     if (this.get('orderItem.quantity') > 0) {
@@ -16,7 +17,9 @@ export default Component.extend({
     return 'order-item';
   }),
 
-  orderItem: computed('order.orderItems.[]', 'product.id', function() {
+  orderItem: computed(
+    'order.orderItems.[]',
+    'product.id', function() {
     return this.get('order.orderItems').
       findBy('product.id', this.get('product.id'));
   }),

@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import DS from 'ember-data';
-import { validator, buildValidations } from 'ember-cp-validations';
+import { buildValidations } from 'ember-cp-validations';
 
 const Validations = buildValidations({
 });
@@ -8,8 +8,7 @@ const Validations = buildValidations({
 const {
   Model,
   attr,
-  belongsTo,
-  hasMany
+  belongsTo
 } = DS;
 
 

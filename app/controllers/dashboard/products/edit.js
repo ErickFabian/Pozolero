@@ -25,6 +25,6 @@ export default Controller.extend(Saveable, {
   },
 
   afterModelSaveFailed() {
-    console.log('failed save Product');
+    alert('failed save Product');
   }
 });

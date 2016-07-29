@@ -6,5 +6,15 @@ const {
 } = Ember;
 
 export default Controller.extend({
-  clients: computed.alias('model')
+  clients: computed.alias('model'),
+
+  actions: {
+    edit(client) {
+      this.transitionToRoute('dashboard.clients.edit', client);
+    },
+
+    delete(client) {
+      client.destroyRecord();
+    }
+  }
 });

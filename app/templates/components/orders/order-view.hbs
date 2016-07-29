@@ -3,7 +3,7 @@
 
   {{#md-card-content}}
     <div>
-      {{md-badge class='orange white-text p-5' text=order.type}}
+      {{md-badge class='white-text p-5' classNames=orderTypeBadgeClass text=order.type}}
     </div>
 
     <br>
@@ -44,11 +44,13 @@
       </small>
     </h6>
 
-    <hr>
+    {{#if order.note}}
+      <hr>
 
-    <h6>
-      {{order.note}}
-    </h6>
+      <h6>
+        {{order.note}}
+      </h6>
+    {{/if}}
 
     <hr>
 
@@ -64,6 +66,9 @@
     {{md-btn icon='fa fa-edit'
       action='edit' buttonType='floating'
       class='btn-large blue'}}
+    {{md-btn icon='fa fa-times'
+      action='delete' buttonType='floating'
+      class='btn-large red pull-right'}}
   {{/md-card-action}}
 
   {{#md-card-reveal}}

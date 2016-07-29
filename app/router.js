@@ -14,11 +14,12 @@ Router.map(function() {
 
     this.route('clients', function () {
       this.route('new');
+      this.route('edit', { path: '/:client_id/edit' });
     });
 
     this.route('products', function () {
       this.route('new');
-      this.route('edit');
+      this.route('edit', { path: '/:order_id/edit' });
      });
   });
 
