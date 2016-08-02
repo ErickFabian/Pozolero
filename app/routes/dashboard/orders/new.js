@@ -15,6 +15,7 @@ export default Route.extend(DirtyRecordDeleter, {
   actions: {
      willTransition() {
         this.clearDirtyRecords('order');
+        this.clearDirtyRecords('orderItem');
      }
   }
 });

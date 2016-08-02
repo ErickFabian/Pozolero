@@ -28,7 +28,8 @@ export default Mixin.create({
 
     addOrderItem(product) {
       let orderItems = this.get('orderItems');
-      let orderItemsProducts= orderItems.mapBy('product.id');
+      let orderItemsProducts = orderItems.mapBy('product.id');
+      orderItemsProducts = Array.from(new Set(orderItemsProducts));
 
       if (orderItemsProducts.contains(product.get('id'))) {
         orderItems.findBy('product.id', product.id).
@@ -44,6 +45,7 @@ export default Mixin.create({
     deleteOrderItem(product) {
       let orderItems = this.get('orderItems');
       let orderItemsProducts= orderItems.mapBy('product.id');
+      orderItemsProducts = Array.from(new Set(orderItemsProducts));
 
       if (orderItemsProducts.contains(product.get('id'))) {
         let orderItem = orderItems.findBy('product.id', product.id);

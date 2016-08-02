@@ -1,5 +1,8 @@
-{{#md-card title=orderTitle
-  activator=true class=computedClasses}}
+{{#md-card
+    title=orderTitle
+    activator=true
+    class=computedClasses
+}}
 
   {{#md-card-content}}
     <div class="row">
@@ -67,17 +70,31 @@
   {{/md-card-content}}
 
   {{#md-card-action class="p-5"}}
-    {{md-btn icon='fa fa-edit'
-      action='edit' buttonType='floating'
-      class='btn-large blue'}}
-    {{#unless orderIsCompleted}}
-      {{md-btn icon='fa fa-spinner'
-      action='changeProgress' buttonType='floating'
-      class='btn-large light-green'}}
-    {{/unless}}
-    {{md-btn icon='fa fa-times'
-      action='delete' buttonType='floating'
-      class='btn-large red pull-right'}}
+    <div class="row">
+      <div class="col l4 center">
+        {{md-btn
+            icon='fa fa-edit'
+            action='edit'
+            buttonType='floating'
+            class='btn-large blue'
+            isDisabled=orderIsCompleted
+        }}
+      </div>
+      <div class="col l4  center">
+        {{md-btn
+          icon='fa fa-spinner'
+          action='changeProgress'
+          buttonType='floating'
+          class='btn-large light-green'
+          isDisabled=orderIsCompleted
+        }}
+      </div>
+      <div class="col l4  center">
+        {{md-btn icon='fa fa-times'
+          action='delete' buttonType='floating'
+          class='btn-large red'}}
+      </div>
+    </div>
   {{/md-card-action}}
 
   {{#md-card-reveal}}
