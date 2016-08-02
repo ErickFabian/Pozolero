@@ -6,7 +6,13 @@
     {{/md-card-content}}
 
     {{#md-card-action}}
-      {{#link-to 'dashboard.products.edit' product}}Edit{{/link-to}}
-      <a href='#' {{action "delete" product}}>Delete</a>
+      {{md-btn icon='fa fa-edit'
+        action='edit' buttonType='floating'
+        class='btn-large blue'}}
+
+      {{md-btn
+        icon='fa fa-times'
+        action='delete' buttonType='floating'
+        class='btn-large pull-right red'}}
     {{/md-card-action}}
 {{/md-card}}

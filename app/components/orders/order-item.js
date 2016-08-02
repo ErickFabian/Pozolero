@@ -18,7 +18,8 @@ export default Component.extend({
   }),
 
   orderItem: computed(
-    'order.orderItems.[]',
+    'orderItems.[]',
+    'orderItems.@each.product.id',
     'product.id', function() {
     return this.get('order.orderItems').
       findBy('product.id', this.get('product.id'));

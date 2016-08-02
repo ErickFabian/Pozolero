@@ -13,7 +13,7 @@ export default Route.extend(DirtyRecordDeleter, {
   },
 
   actions: {
-     willTransition(transition) {
+     willTransition() {
         this.clearDirtyRecords('order');
      }
   }

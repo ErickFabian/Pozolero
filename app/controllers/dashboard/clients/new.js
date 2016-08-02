@@ -9,7 +9,7 @@ export default Controller.extend({
   client: computed.alias('model'),
 
   actions: {
-    create() {
+    save() {
       let client = this.get('client');
       client.save().then(this.onSuccess(), this.onFail());
     }

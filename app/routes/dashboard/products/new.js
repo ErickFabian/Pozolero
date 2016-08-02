@@ -7,7 +7,7 @@ export default Ember.Route.extend(DirtyRecordDeleter, {
   },
 
   actions: {
-     willTransition(transition) {
+     willTransition() {
         this.clearDirtyRecords('product');
      }
   }

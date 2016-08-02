@@ -6,5 +6,15 @@ const {
 } = Ember;
 
 export default Controller.extend({
-  products: computed.alias('model')
+  products: computed.alias('model'),
+
+  actions: {
+    editProduct(product) {
+      this.transitionToRoute('dashboard.products.edit', product);
+    },
+
+    deleteProduct(product) {
+      product.destroyRecord();
+    }
+  }
 });

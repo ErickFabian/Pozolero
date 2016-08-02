@@ -12,10 +12,11 @@ const {
 } = DS;
 
 export default Model.extend(Validations, {
+  status:     attr('string', { defaultValue: 'new' }),
   note:       attr('string'),
   total:      attr('string',  { defaultValue: '0' }),
   createdAt:  attr('date'),
   type:       attr('string', { defaultValue: 'local' }),
-  client:     belongsTo('client'),
-  orderItems: hasMany('orderItem')
+  client:     belongsTo(),
+  orderItems: hasMany()
 });

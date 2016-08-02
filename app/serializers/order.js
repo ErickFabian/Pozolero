@@ -8,6 +8,9 @@ export default ApplicationSerializer.extend({
   attrs: {
     orderItems: {
       serialize: 'records'
+    },
+    createdAt: {
+      serialize: false
     }
   }
 });

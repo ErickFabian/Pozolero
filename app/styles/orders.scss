@@ -20,3 +20,19 @@
     border-radius: 50%;
   }
 }
+
+.order-item-status {
+  border: solid 3px white;
+
+  &.new {
+    border-color: #81d4fa!important;
+  }
+
+  &.in-progress {
+    border-color: #ffb300!important;
+  },
+
+  &.completed {
+    border-color: #4CAF50!important;
+  }
+}

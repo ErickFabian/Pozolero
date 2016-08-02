@@ -19,7 +19,7 @@ Router.map(function() {
 
     this.route('products', function () {
       this.route('new');
-      this.route('edit', { path: '/:order_id/edit' });
+      this.route('edit', { path: '/:product_id/edit' });
      });
   });
 

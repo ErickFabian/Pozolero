@@ -6,6 +6,6 @@ export default Ember.Mixin.create({
       if (model.get('isNew')) {
         model.unloadRecord();
       }
-    })
+    });
   }
 });

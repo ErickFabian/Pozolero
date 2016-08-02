@@ -1,3 +1,26 @@
 .btn {
   text-transform: none;
 }
+
+.ember-power-select-trigger {
+  top: 25px;
+  position: relative;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-radius: none;
+  background-color: #ffffff;
+  line-height: 1.75;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  min-height: 1.75em;
+  user-select: none;
+  -webkit-user-select: none;
+  color: inherit;
+  padding-bottom: 10px;
+}
+
+.ember-power-select-trigger:focus, .ember-power-select-trigger--active {
+  border: none;
+  box-shadow: none;
+}

@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <div class="row">
+    {{#each products as |product|}}
+      <div class="col l3 m6 s12">
+        {{orders/order-item product=product order=order}}
+      </div>
+    {{/each}}
+  </div>
+</div>
