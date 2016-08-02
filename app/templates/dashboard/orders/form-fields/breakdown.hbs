@@ -1,46 +1,7 @@
 <div class="wrapper">
   <div class="row">
     <div class="col s12">
-      <table>
-        <thead>
-          <tr>
-            <th>Producto</th>
-            <th>Cantidad</th>
-            <th>Costo Unitario</th>
-            <th>Costo Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each orderItems as |orderItem|}}
-            <tr>
-              <td>
-                {{orderItem.product.name}}
-              </td>
-              <td>
-                {{orderItem.quantity}}
-              </td>
-              <td>
-                {{orderItem.product.cost}}
-              </td>
-              <td>
-                {{orderItem.cost}}
-              </td>
-            </tr>
-          {{/each}}
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3">
-              <h5>
-                Total:
-              </h5>
-            </td>
-            <td>
-              {{orderTotal}}
-            </td>
-          </tr>
-        </tfoot>
-      </table>
+      {{orders/order-breakdown orderItems=orderItems}}
     </div>
   </div>
   <div class="row">

@@ -10,7 +10,7 @@
         <div class="right-align">
           <h6>
             <strong>
-              Fecha:
+              Date:
             </strong>
             <small>
               {{moment-from-now order.createdAt interval=1000}}
@@ -33,7 +33,7 @@
             Client:
           </strong>
           <small>
-            {{order.client.fullName}}
+            {{client.fullName}}
           </small>
         </h6>
         <h6>
@@ -41,7 +41,7 @@
             Address:
           </strong>
           <small>
-            {{order.client.address}}
+            {{client.address}}
           </small>
         </h6>
         <h6>
@@ -49,7 +49,7 @@
             Phone Number:
           </strong>
           <small>
-            {{order.client.phoneNumber}}
+            {{client.phoneNumber}}
           </small>
         </h6>
       </div>
@@ -70,7 +70,7 @@
   {{/md-card-content}}
 
   {{#md-card-action class="p-5"}}
-    <div class="row">
+    <div class="row mb-5">
       <div class="col l4 center">
         {{md-btn
             icon='fa fa-edit'
@@ -98,45 +98,6 @@
   {{/md-card-action}}
 
   {{#md-card-reveal}}
-    <table>
-      <thead>
-        <tr>
-          <th>Producto</th>
-          <th>Cantidad</th>
-          <th>Costo Unitario</th>
-          <th>Costo Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each orderItems as |orderItem|}}
-          <tr>
-            <td>
-              {{orderItem.product.name}}
-            </td>
-            <td>
-              {{orderItem.quantity}}
-            </td>
-            <td>
-              {{orderItem.product.cost}}
-            </td>
-            <td>
-              {{orderItem.cost}}
-            </td>
-          </tr>
-        {{/each}}
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="3">
-            <h5>
-              Total:
-            </h5>
-          </td>
-          <td>
-            {{orderTotal}}
-          </td>
-        </tr>
-      </tfoot>
-    </table>
+    {{orders/order-breakdown orderItems=orderItems}}
   {{/md-card-reveal}}
 {{/md-card}}

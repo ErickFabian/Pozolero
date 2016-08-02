@@ -12,14 +12,6 @@ const {
 } = computed;
 
 export default Mixin.create({
-  order:          alias('model.order'),
-  clients:        alias('model.clients'),
-  products:       alias('model.products'),
-  orderItems:     alias('order.orderItems'),
-  orderItemsCost: mapBy('orderItems', 'cost'),
-  orderTotal:     sum('orderItemsCost'),
-  orderTypes:     ['local', 'takeout'],
-
   actions: {
     save() {
       let order = this.get('order');
@@ -57,11 +49,5 @@ export default Mixin.create({
         }
       }
     }
-  },
-
-  orderClientChanged: Ember.observer('orderClientId', function() {
-    let order = this.get('order');
-    let client = this.store.peekRecord('client', this.get('orderClientId'));
-    order.set('client', client);
-  })
+  }
 });

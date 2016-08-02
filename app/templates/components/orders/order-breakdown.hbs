@@ -1,0 +1,40 @@
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Unit cost</th>
+      <th>Total cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each orderItems as |orderItem|}}
+      <tr>
+        <td>
+          {{orderItem.product.name}}
+        </td>
+        <td>
+          {{orderItem.quantity}}
+        </td>
+        <td>
+          {{orderItem.product.cost}}
+        </td>
+        <td>
+          {{orderItem.cost}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3">
+        <h5>
+          Total:
+        </h5>
+      </td>
+      <td>
+        {{orderTotal}}
+      </td>
+    </tr>
+  </tfoot>
+</table>

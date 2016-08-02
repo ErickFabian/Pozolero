@@ -1,28 +1,14 @@
 import Ember from 'ember';
+import OrderProperties from 'pozolero/mixins/orders/properties';
 
-const {
-  Component,
-  computed
-} = Ember;
+const { Component, computed } = Ember;
 
-const {
-  filterBy,
-  mapBy,
-  alias,
-  sum,
-  equal
-} = computed;
-
-export default Component.extend({
+export default Component.extend(OrderProperties, {
   classNames:     ['col', 's12', 'm6'],
-  client:         alias('order.client'),
-  orderItems:     filterBy('order.orderItems', 'isNew', false),
-  orderItemsCost: mapBy('orderItems', 'cost'),
-  orderTotal:     sum('orderItemsCost'),
+  client:         computed.alias('order.client'),
   editAction:     'editOrder',
   changeProgress: 'changeProgress',
   deleteAction:   'deleteOrder',
-  orderIsCompleted: equal('order.status', 'completed'),
 
   orderTypeBadgeClasses: {
     'local':    'orange',
@@ -39,15 +25,19 @@ export default Component.extend({
 
   orderTypeBadgeClass: computed('order.type', function() {
     return this.get('orderTypeBadgeClasses')[this.get('order.type')];
-  })
+  }),
 
   actions: {
     edit() {
-      this.sendAction('editAction', this.get('order'));
+      if (!this.get('orderIsCompleted')) {
+        this.sendAction('editAction', this.get('order'));
+      }
     },
 
     changeProgress() {
-      this.sendAction('changeProgress', this.get('order'));
+      if (!this.get('orderIsCompleted')) {
+        this.sendAction('changeProgress', this.get('order'));
+      }
     },
 
     delete() {

@@ -1,10 +1,6 @@
 import Ember from 'ember';
 
-const {
-  Component
-} = Ember;
-
-export default Component.extend({
+export default Ember.Component.extend({
   didInsertElement() {
     this.$('ul.tabs').tabs();
   }
