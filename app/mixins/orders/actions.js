@@ -5,12 +5,6 @@ const {
   computed
 } = Ember;
 
-const {
-  mapBy,
-  alias,
-  sum
-} = computed;
-
 export default Mixin.create({
   actions: {
     save() {

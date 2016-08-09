@@ -5,7 +5,7 @@
 }}
 
   {{#md-card-content}}
-    <div class="row">
+    <div class="row mb-5">
       <div class="col s12">
         <div class="right-align">
           <h6>
@@ -20,13 +20,13 @@
 
       </div>
     </div>
-    <div class="row">
+    <div class="row mb-5">
       <div class="col s12">
         {{md-badge class='white-text' classNames=orderTypeBadgeClass text=order.type}}
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-5">
       <div class="col s12">
         <h6>
           <strong>
@@ -80,7 +80,7 @@
             isDisabled=orderIsCompleted
         }}
       </div>
-      <div class="col l4  center">
+      <div class="col l4 center">
         {{md-btn
           icon='fa fa-spinner'
           action='changeProgress'
@@ -89,7 +89,7 @@
           isDisabled=orderIsCompleted
         }}
       </div>
-      <div class="col l4  center">
+      <div class="col l4 center">
         {{md-btn icon='fa fa-times'
           action='delete' buttonType='floating'
           class='btn-large red'}}

@@ -8,6 +8,16 @@ const {
 
 export default Controller.extend(Saveable, {
   orders: computed.alias('model'),
+  queryParams: [
+    'page',
+    'perPage',
+    'clientFirstNameCont',
+    'createdAtEq'
+  ],
+
+  clientNameCont: '',
+  createdAtEq: '',
+  date: '',
 
   actions: {
     editOrder(order) {
@@ -28,5 +38,10 @@ export default Controller.extend(Saveable, {
     deleteOrder(order) {
       order.destroyRecord();
     }
-  }
+  },
+
+  dateObserver: Ember.observer('date', function() {
+    let formattedDate = moment(this.get('date')).format('YYYY-MM-DD');
+    this.set('createdAtEq', formattedDate);
+  })
 });

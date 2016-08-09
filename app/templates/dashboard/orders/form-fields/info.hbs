@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="row">
-    <div class="col s12 m6">
+    <div class="col s12">
        {{#power-select
           options=clients
           selected=order.client
@@ -11,7 +11,11 @@
           {{client.fullName}}
         {{/power-select}}
     </div>
-    <div class="col s12 m6">
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col s12">
       {{md-select content=orderTypes
         value=order.type
         label="Order Type"
