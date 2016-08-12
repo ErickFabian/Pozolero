@@ -6,13 +6,14 @@ const {
 } = Ember;
 
 export default Component.extend({
-  classNames: ['card-panel'],
+  classNames: ['card-panel', 'lighten-1'],
   classNameBindings: ['alertType'],
   message: null,
   type: 'warning',
   alertMessageClass: 'white-text',
 
   alertTypeClass: {
+    'success': 'green',
     'warning': 'yellow',
     'danger': 'red'
   },

@@ -16,7 +16,7 @@ export default Ember.Route.extend(Authenticatable, {
   authActionSucceeded() {
     this.transitionTo('auth.password.edit').then(() => {
       let message = this.i18n.t('auth.resetPasswordInstructionsSent');
-      this.send('setAlert', message, 'success');
+      this.send('setAlert', message, 'warning');
     });
   }
 });

@@ -1,5 +1,7 @@
 export default {
   auth: {
+    resetPasswordInstructionsSent: 'Recibiras un correo con instrucciones para restablecer tu contraseña',
+
     forms: {
       email: 'Email',
       firstName: 'Nombres',
