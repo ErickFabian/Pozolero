@@ -1,0 +1,15 @@
+<h1>{{t 'auth.password.new.title'}}</h1>
+
+<form autocomplete="off" class="text-center" {{action 'authAction' model on='submit'}}>
+  <div class="row">
+    <div class="col s12">
+      {{form-input
+        label=(t 'auth.forms.email')
+        model=model
+        valuePath='email'
+        type='email'
+      }}
+    </div>
+  </div>
+  {{form-submit text=(t 'auth.password.new.submit')}}
+</form>

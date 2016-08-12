@@ -1,4 +1,4 @@
-<h1>{{t 'auth.signIn.title'}}</h1>
+<h1>{{t 'auth.password.edit.title'}}</h1>
 
 <form class="text-center" {{action 'authAction' model on='submit'}}>
   <div class="row">
@@ -11,26 +11,28 @@
     </div>
     <div class="col s12">
       {{form-input
-        label=(t 'auth.forms.email')
-        model=model
-        valuePath='email'
-        type='email'
-      }}
-
-    </div>
-    <div class="col s12">
-      {{form-input
         label=(t 'auth.forms.password')
         model=model
         valuePath='password'
         type='password'
       }}
     </div>
-    <div class="col s12 right-align">
-      {{#link-to 'auth.password.new'}}
-        {{t 'auth.signIn.forgotPassword'}}
-      {{/link-to}}
+    <div class="col s12">
+      {{form-input
+        label=(t 'auth.forms.passwordConfirmation')
+        model=model
+        valuePath='passwordConfirmation'
+        type='password'
+      }}
+    </div>
+    <div class="col s12">
+      {{form-input
+        label=(t 'auth.forms.resetPasswordToken')
+        model=model
+        valuePath='resetPasswordToken'
+        type='text'
+      }}
     </div>
   </div>
-  {{form-submit text=(t 'auth.signIn.submit')}}
+  {{form-submit text=(t 'auth.password.edit.submit')}}
 </form>
