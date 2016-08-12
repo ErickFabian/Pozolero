@@ -26,6 +26,11 @@ Router.map(function() {
   this.route('auth', function () {
      this.route('sign-in');
      this.route('sign-up');
+
+     this.route('password', function() {
+       this.route('edit');
+       this.route('new');
+     });
   });
 });
 

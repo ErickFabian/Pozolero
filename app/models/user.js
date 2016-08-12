@@ -1,15 +1,33 @@
+
 import Ember from 'ember';
 import DS from 'ember-data';
+import {
+  validator, buildValidations
+}
+from 'ember-cp-validations';
+
+const Validations = buildValidations({
+  password: [
+    validator('presence', true),
+    validator('length', {
+      min: 4,
+      max: 8
+    })
+  ],
+  email: [
+    validator('presence', true),
+    validator('format', { type: 'email' })
+  ]
+});
 
 const {
   Model,
   attr,
 } = DS;
 
-
 const { computed } = Ember;
 
-export default Model.extend({
+export default Model.extend(Validations, {
   'firstName':      attr('string'),
   'lastName':       attr('string'),
   'address':        attr('string'),
@@ -20,3 +38,6 @@ export default Model.extend({
     return `${this.get('firstName')} ${this.get('lastName')}`;
   })
 });
+
+
+

@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'pozolero',
+    podModulePrefix: 'pozolero/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -25,6 +26,10 @@ module.exports = function(environment) {
     sassOptions: {
       includePaths: ['bower_components/materialize/sass']
     }
+  };
+
+  ENV.i18n = {
+    defaultLocale: 'es'
   };
 
   if (environment === 'development') {

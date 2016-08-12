@@ -1,25 +1,27 @@
 import Ember from 'ember';
 
-var transformObjectKeys = function(object, transform) {
-  var newObject = {};
-
-  Object.keys(object).forEach(function(key) {
-    if ((object[key] instanceof(Object)) && !(object[key] instanceof(Array))) {
-      newObject[Ember.String[transform](key)] = transformObjectKeys(object[key], transform);
-    } else {
-      newObject[Ember.String[transform](key)] = object[key];
-    }
-  });
-
-  return newObject;
+let transformObjectKeys = (object, transform) => {
+  return Object.keys(object).reduce((result, key) => {
+    let value = isNestedObject(object[key]) ?
+      transformObjectKeys(object[key], transform) : object[key];
+    result[Ember.String[transform](key)] = value;
+    return result;
+  }, {});
 };
 
-var camelizeObject = function(object) {
+let isNestedObject = (value) => {
+  return (value instanceof(Object)) && !(value instanceof(Array));
+};
+
+let camelizeObjectKeys = (object) => {
   return transformObjectKeys(object, 'camelize');
 };
 
-var underscoreObject = function(object) {
+let underscoreObjectKeys = (object) => {
   return transformObjectKeys(object, 'underscore');
 };
 
-export { camelizeObject, underscoreObject };
+export {
+  camelizeObjectKeys,
+  underscoreObjectKeys
+};

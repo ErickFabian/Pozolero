@@ -1,0 +1,47 @@
+<h1>Sign Up</h1>
+
+<form autocomplete="off" class="text-center" {{action 'authAction' model on='submit'}}>
+  <div class="row">
+    <div class="col s12">
+      {{form-input
+        label='Email'
+        model=model
+        valuePath='email'
+        type='email'
+      }}
+    </div>
+    <div class="col s12">
+      {{form-input
+        label='First Name'
+        model=model
+        valuePath='firstName'
+        type='text'
+      }}
+    </div>
+    <div class="col s12">
+      {{form-input
+        label='First Name'
+        model=model
+        valuePath='lastName'
+        type='text'
+      }}
+    </div>
+    <div class="col s12">
+      {{form-input
+        label='Password'
+        model=model
+        valuePath='password'
+        type='password'
+      }}
+    </div>
+    <div class="col s12">
+      {{form-input
+        label='Password confirmation'
+        model=model
+        valuePath='passwordConfirmation'
+        type='password'
+      }}
+    </div>
+  </div>
+  {{form-submit text="Registrarse"}}
+</form>
