@@ -1,12 +1,12 @@
 import Ember from 'ember';
-import { underscoreObject } from 'pozolero/mixins/objectable';
+import { underscoreObjectKeys } from 'pozolero/mixins/objectable';
 
 export default Ember.Mixin.create({
   searchParamsKeys: [],
 
   sanitizeParams(params, searchKey = 'q') {
     let _params = this.sanitizeSearchParams(params, searchKey);
-    return underscoreObject(_params);
+    return underscoreObjectKeys(_params);
   },
 
   sanitizeSearchParams(params, searchKey = 'q') {

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import moment from 'moment';
 import Saveable from 'pozolero/mixins/saveable';
 
 const {
@@ -18,6 +19,11 @@ export default Controller.extend(Saveable, {
   clientNameCont: '',
   createdAtEq: '',
   date: '',
+
+  totalPages: Ember.computed('size', 'number', 'model.[]', function() {
+    console.log(this.get('model.meta'));
+    return this.get('model.meta.total-pages');
+  }),
 
   actions: {
     editOrder(order) {

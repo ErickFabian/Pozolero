@@ -1,6 +1,7 @@
 export default {
   auth: {
     resetPasswordInstructionsSent: 'Recibiras un correo con instrucciones para restablecer tu contraseña',
+    resetPasswordSucceeded: 'Contraseña actualizada correctament',
 
     forms: {
       email: 'Email',
@@ -69,5 +70,9 @@ export default {
     email: "{{description}} debe ser un email valido",
     phone: "{{description}} debe ser un telefono valid",
     url: "{{description}} debe ser una url valida"
+  },
+
+  orders: {
+    notFound: 'No orders found!'
   }
 };

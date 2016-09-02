@@ -10,7 +10,7 @@
   {{else}}
     <div>
       <h5 class="center-align">
-        No orders today
+        {{t 'orders.notFound'}}
       </h5>
     </div>
   {{/each}}
@@ -19,6 +19,6 @@
 
 <div class="row">
   <div class="col s12">
-    {{page-numbers content=orders}}
+    {{page-numbers content=content}}
   </div>
 </div>
