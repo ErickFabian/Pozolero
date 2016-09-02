@@ -5,6 +5,7 @@ import RouteMixin from 'ember-cli-pagination/remote/route-mixin';
 export default Ember.Route.extend(ParamSanitizer, RouteMixin, {
 
   searchParamsKeys: [
+    'perPage',
     'createdAtEq',
     'clientFirstNameCont',
   ],
@@ -26,7 +27,7 @@ export default Ember.Route.extend(ParamSanitizer, RouteMixin, {
 
   searchParams(queryParams = {}) {
     let params = {
-      'perPage': '4'
+      'per_page': '4'
     };
     Ember.merge(params, queryParams);
     return this.sanitizeParams(params);
